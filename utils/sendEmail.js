@@ -10,8 +10,8 @@ module.exports = async (user, mailType) => {
       port: 587,
       secure: true,
       auth: {
-        user: process.env.user.email,
-        pass: process.env.user.pass,
+        user: process.env.useremail,
+        pass: process.env.userpass,
       },
     });
 
@@ -26,7 +26,7 @@ module.exports = async (user, mailType) => {
 
     let emailContent, mailOptions;
     if (mailType == "resetpassword") {
-      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="https://password-reseet.herokuapp.com/resetpassword/${encryptedToken}">${encryptedToken}</a>  </div>`;
+      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="http://localhost:3000/resetpassword/${encryptedToken}">${encryptedToken}</a>  </div>`;
 
       mailOptions = {
         from: "shangeeth24@gmail.com",

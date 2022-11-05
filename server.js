@@ -5,7 +5,7 @@ app.use(express.json());
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 const mongodbConnection = require("./config/mongodbConnection");
-const port = process.env.PORT || 6572;
+const port = 6572;
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.get("/", (req, res) => res.send("Hello World!"));
