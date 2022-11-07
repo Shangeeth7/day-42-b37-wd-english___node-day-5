@@ -26,12 +26,12 @@ module.exports = async (user, mailType) => {
 
     let emailContent, mailOptions;
     if (mailType == "resetpassword") {
-      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="http://localhost:3000/resetpassword/${encryptedToken}">${encryptedToken}</a>  </div>`;
+      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="http://localhost:3000/resetpassword/${encryptedToken}">Click here to reset password</a>  </div>`;
 
       mailOptions = {
-        from: "shangeeth24@gmail.com",
+        from: "moto.service.centerr@gmail.com",
         to: user.email,
-        subject: "Reset password For MERN Auth",
+        subject: "Reset password ",
         html: emailContent,
       };
     }
